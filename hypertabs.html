@@ -1,0 +1,1139 @@
+<!DOCTYPE html>
+<html lang='en' class='dark-theme' onclick="crash()">
+<script src="crash.js"></script>
+<script>
+    function toggleId(){
+        crash()
+    }
+</script>
+<head>
+        <!--
+    Hypertabs
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <https://www.gnu.org/licenses/>.
+        -->
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no'>
+  <meta name="description" content="Hypertabs" >
+  <!-- Open Graph tags -->
+  <meta property="og:title" content="Hypertabs">
+  <meta property="og:image" content="/icon.png">
+  <!-- End Open Graph Tags -->
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+body {
+  font-family: Roboto, "Segoe UI", Tahoma, sans-serif;
+}
+.center {
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -55%);
+}
+
+.btn1 {
+  color: antiquewhite;
+  outline: none;
+  background-color: Transparent;
+  border: none;
+}
+.btn {
+  margin-left: 3px;
+  outline: none;
+  color: antiquewhite;
+  background-color: Transparent;
+  border: none;
+}
+.btns {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding-top: 40px;
+}
+
+.head-titl {
+  text-align: center;
+  color: #fff;
+}
+
+.ppl {
+  display: inline-grid;
+  justify-content: center;
+  width: 100%;
+  height: 452px;
+}
+
+.duce {
+  color: #fff;
+  display: grid;
+  width: min-content;
+}
+
+.covid {
+  color: #fff;
+  display: grid;
+  width: min-content;
+}
+
+.b3at {
+  color: #fff;
+  display: grid;
+  width: min-content;
+}
+
+.games-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200px;
+  height: 100%;
+  background: #222;
+}
+.crm {
+  width: 112px;
+  height: 84px;
+  vertical-align: top;
+  display: grid;
+  text-align: center;
+  justify-items: center;
+  align-items: center;
+}
+.icn {
+  width: 48px;
+  height: 48px;
+}
+.bookmarks {
+  border-bottom: 1px solid black !important;
+  white-space: nowrap;
+}
+#ad {
+  margin-top: 14px;
+  margin-right: auto;
+  margin-bottom: auto;
+  margin-left: auto;
+  width: 32%;
+  border: 1px solid green;
+  padding: 10px;
+}
+
+#ht {
+  max-width: 15%;
+  height: auto;
+}
+fieldset {
+  border: 1px solid #000;
+}
+#input {
+  border: none;
+  border-radius: calc(0.5 * 44px);
+  font-size: 16px;
+  outline: none;
+  position: relative;
+}
+#inputb {
+  border: none;
+  border-radius: calc(0.5 * 44px);
+  font-size: 16px;
+  outline: none;
+  padding-inline-end: 40px;
+  padding-inline-start: 52px;
+  position: relative;
+  width: 80%;
+  height: 44px;
+}
+#inputimg {
+  position: absolute;
+  left: 0;
+  top: -1px;
+  padding-left: 14px;
+  outline: none;
+}
+#txt {
+  padding-top: 50px;
+  font-size: 25px;
+  color: #ffffff;
+  font-weight: normal;
+  margin: 0;
+  padding-top: 0;
+  padding-bottom: 40px;
+}
+#headtxt {
+  font-size: 80px;
+  color: bisque;
+}
+@media only screen and (max-width: 600px) {
+  #txt {
+    font-size: 14px;
+  }
+  .center {
+    width: 410px;
+  }
+  #inputb {
+    width: 69%;
+  }
+  .crm {
+    width: 93px;
+  }
+  #headtxt {
+    font-size: 70px;
+  }
+}
+@media only screen and (max-width: 400px) {
+  #txt {
+    font-size: 12px;
+    width: 97%;
+    word-wrap: normal;
+  }
+  .center {
+    width: 350px;
+  }
+  #inputb {
+    width: 57%;
+  }
+  .crm {
+    width: 85px;
+  }
+  #headtxt {
+    font-size: 60px;
+  }
+}
+@media only screen and (max-width: 330px) {
+  .center {
+    width: 300px;
+  }
+  #weather {
+    visibility: hidden;
+  }
+}
+#bmenu {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 175px;
+}
+#bul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  left: 0;
+  min-width: 180px;
+}
+#bookmarka {
+  display: inline-block;
+  height: 29.2px;
+  padding-left: 29.2px;
+  font-size: 14px;
+  text-decoration: none;
+  font-family: "Open Sans", sans-serif;
+  background-size: 20px 20px;
+  background-position: 4.1px 0;
+  background-repeat: no-repeat;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  max-width: 169px;
+  white-space: nowrap;
+}
+
+.info {
+  margin: 0;
+  position: absolute;
+  top: 2.5em;
+  right: 2em;
+  /* text-align: right; */
+  width: auto;
+  text-align: center;
+  color: bisque;
+}
+#alerts {
+  text-decoration: underline;
+}
+    html {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  background: #f1f3f4;
+  overflow-y: hidden;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+html.dark-theme {
+  background: #1c1c1c;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.pointer:hover {
+  cursor: pointer;
+  background: #3f4042;
+}
+
+.surface {
+  box-sizing: border-box;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+}
+
+@media (min-width: 100%) {
+  .surface {
+    padding: 60px;
+  }
+
+  .mock-browser {
+    width: 100%;
+    background: #dee1e6;
+    border-radius: 8px;
+    flex-shrink: 0;
+    overflow: hidden;
+  }
+
+  html.dark-theme .mock-browser {
+    background: #202123;
+  }
+
+  .mock-browser-content {
+    position: relative;
+    z-index: 1;
+    margin-top: -1px;
+    display: flex;
+  }
+
+  .chrome-tabs-optional-shadow-below-bottom-bar {
+    z-index: 2;
+  }
+}
+
+@media (max-width: 799px) {
+  html {
+    background: #fff;
+  }
+
+  html.dark-theme {
+    background: #252729;
+  }
+
+  .mock-browser .chrome-tabs {
+    border-radius: 0;
+  }
+}
+
+.aa {
+  background-color: #202124;
+  width: 100%;
+  color: white;
+  float: right;
+  border: 1px solid #b3b3b3;
+}
+
+button {
+  font-family: inherit;
+  display: inline-block;
+  cursor: pointer;
+  background: #fff;
+  font-size: 12px;
+  border-radius: 9999px;
+}
+
+@supports (-webkit-overflow-scrolling: touch) {
+  /* Prevent double tap to zoom on iOS https://stackoverflow.com/a/47131647 */
+  button {
+    touch-action: manipulation;
+  }
+}
+
+button:focus {
+  border-color: #a9adb0;
+  outline: none;
+}
+
+.buttons {
+  margin-left: -0.5em;
+  text-align: center;
+}
+
+.buttons button {
+  margin: 0.5em;
+}
+
+html.dark-theme button {
+  -webkit-font-smoothing: antialiased;
+  background: transparent;
+  color: #fff;
+}
+
+html.dark-theme button:focus {
+  border-color: #858b90;
+  outline: none;
+  border: none;
+}
+
+button:active {
+  outline: none;
+  border: none;
+}
+
+#createTab {
+  border: none;
+  position: absolute;
+  outline: none;
+  top: 0;
+  font-size: 20px;
+  -webkit-font-smoothing: antialiased;
+}
+
+.iframething {
+  width: 100%;
+  height: 92.3%;
+  outline: none;
+  border: 0;
+  overflow-y: hidden;
+}
+
+.container {
+  background: #292b2e;
+  display: inline;
+}
+
+.mock-browser-content {
+  background-color: #323639;
+  padding: 0em 0.5em 0.2em;
+  display: flex;
+}
+
+#urlbar {
+  width: 100%;
+  border: hidden;
+  background: #202124;
+  height: 26px;
+  outline: none;
+  color: white;
+  border-radius: 12px;
+  box-sizing: border-box;
+  padding-left: 10px;
+  font-size: small;
+}
+
+#extensionlist {
+  display: flex;
+}
+
+.extenico {
+  width: 24px;
+  height: 24px;
+  padding-top: 2px;
+  padding-left: 8px;
+  padding-right: 4px;
+}
+
+#urlbutton {
+  float: left;
+  display: flex;
+  outline: none;
+  border: 0;
+  font-size: large;
+}
+
+@media only screen and (max-width: 600px) {
+  #urlbutton {
+    font-size: 9px;
+  }
+  #createTab {
+    padding-right: 4px;
+  }
+  .iframething {
+    height: 89.9%;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .iframething {
+    height: 87.9%;
+  }
+}
+
+#options {
+  float: right;
+  outline: none;
+  border: 0;
+  font-size: large;
+}
+
+.dropdown-content {
+  background-color: #2c2e31;
+  display: none;
+  right: 0;
+  border: solid 1px #b3b3b3;
+  position: absolute;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: white;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content .divider {
+  height: 1px;
+  width: 147px;
+  background: #b3b3b3;
+  margin-left: 6px;
+}
+
+.dropdown-content .dividerext {
+  height: 1px;
+  width: 313px;
+  background: #b3b3b3;
+  margin-left: 6px;
+}
+
+.dropdown-content .dividerct {
+  height: 1px;
+  width: 284px;
+  background: #b3b3b3;
+  margin-left: 6px;
+}
+
+.dropdown-content .dividersua {
+  height: 1px;
+  width: 313px;
+  background: #b3b3b3;
+  margin-left: 6px;
+}
+
+.dropdown-content .inp {
+  position: relative;
+  top: -1px;
+  height: 20px;
+}
+
+.dropdown-content .inp:hover {
+  cursor: default;
+}
+
+div#customtheme {
+  height: 553px;
+}
+
+.th {
+  cursor: default;
+  margin-top: 7px;
+}
+
+.th:hover {
+  background: #2c2e31;
+  cursor: default;
+}
+
+.bt {
+  position: relative;
+  top: 18px;
+}
+    .pin {
+  width: 47px !important;
+}
+.pin .chrome-tab-close {
+  display: none;
+}
+
+.chrome-tabs {
+  box-sizing: border-box;
+  position: relative;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 12px;
+  width: 100%;
+  height: 46px;
+  padding: 8px 3px 4px 3px;
+  background: #dee1e6;
+  border-radius: 5px 5px 0 0;
+  overflow: hidden;
+}
+.chrome-tabs * {
+  box-sizing: inherit;
+  font: inherit;
+}
+.chrome-tabs .chrome-tabs-content {
+  position: relative;
+  /*
+  This is a useful function in CSS, it's called 'calc', and despite what you
+  may guess based on the name, it is a calculator. You can do arithmetic on
+  any different CSS units.
+  */
+  width: calc(100% - 24px);
+  height: 100%;
+}
+.chrome-tabs .chrome-tab {
+  position: absolute;
+  left: 0;
+  height: 36px;
+  width: 240px;
+  border: 0;
+  margin: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+.chrome-tabs .chrome-tab,
+.chrome-tabs .chrome-tab * {
+  user-select: none;
+  cursor: default;
+}
+.chrome-tabs .chrome-tab .chrome-tab-dividers {
+  position: absolute;
+  top: 7px;
+  bottom: 7px;
+  left: var(--tab-content-margin);
+  right: var(--tab-content-margin);
+}
+.chrome-tabs .chrome-tab .chrome-tab-dividers,
+.chrome-tabs .chrome-tab .chrome-tab-dividers::before,
+.chrome-tabs .chrome-tab .chrome-tab-dividers::after {
+  pointer-events: none;
+}
+.chrome-tabs .chrome-tab .chrome-tab-dividers::before,
+.chrome-tabs .chrome-tab .chrome-tab-dividers::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: #a9adb0;
+  opacity: 1;
+  transition: opacity 0.2s ease;
+}
+.chrome-tabs .chrome-tab .chrome-tab-dividers::before {
+  left: 0;
+}
+.chrome-tabs .chrome-tab .chrome-tab-dividers::after {
+  right: 0;
+}
+.chrome-tabs .chrome-tab:first-child .chrome-tab-dividers::before,
+.chrome-tabs .chrome-tab:last-child .chrome-tab-dividers::after {
+  opacity: 0;
+}
+.chrome-tabs .chrome-tab .chrome-tab-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+}
+.chrome-tabs .chrome-tab .chrome-tab-background > svg {
+  width: 100%;
+  height: 100%;
+}
+.chrome-tabs .chrome-tab .chrome-tab-background > svg .chrome-tab-geometry {
+  fill: #f4f5f6;
+}
+.chrome-tabs .chrome-tab[active] {
+  z-index: 5;
+}
+.chrome-tabs
+  .chrome-tab[active]
+  .chrome-tab-background
+  > svg
+  .chrome-tab-geometry {
+  fill: #fff;
+}
+.chrome-tabs .chrome-tab:not([active]) .chrome-tab-background {
+  transition: opacity 0.2s ease;
+  opacity: 0;
+}
+@media (hover: hover) {
+  .chrome-tabs .chrome-tab:not([active]):hover {
+    z-index: 2;
+  }
+  .chrome-tabs .chrome-tab:not([active]):hover .chrome-tab-background {
+    opacity: 1;
+  }
+}
+.chrome-tabs .chrome-tab.chrome-tab-was-just-added {
+  top: 10px;
+  animation: chrome-tab-was-just-added 120ms forwards ease-in-out;
+}
+.chrome-tabs .chrome-tab .chrome-tab-content {
+  position: absolute;
+  display: flex;
+  top: 0;
+  bottom: 0;
+  left: var(--tab-content-margin);
+  right: var(--tab-content-margin);
+  padding: 9px 8px;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  overflow: hidden;
+  pointer-events: all;
+}
+.chrome-tabs .chrome-tab[is-mini] .chrome-tab-content {
+  padding-left: 2px;
+  padding-right: 2px;
+}
+.chrome-tabs .chrome-tab .chrome-tab-favicon {
+  position: relative;
+  flex-shrink: 0;
+  flex-grow: 0;
+  height: 16px;
+  width: 16px;
+  background-size: 16px;
+  margin-left: 4px;
+}
+.chrome-tabs .chrome-tab[is-small] .chrome-tab-favicon {
+  margin-left: 0;
+}
+.chrome-tabs .chrome-tab[is-mini]:not([active]) .chrome-tab-favicon {
+  margin-left: auto;
+  margin-right: auto;
+}
+.chrome-tabs .chrome-tab[is-mini][active] .chrome-tab-favicon {
+  display: none;
+}
+.chrome-tabs .chrome-tab .chrome-tab-title {
+  flex: 1;
+  vertical-align: top;
+  overflow: hidden;
+  white-space: nowrap;
+  margin-left: 4px;
+  color: #5f6368;
+  -webkit-mask-image: linear-gradient(
+    90deg,
+    #000 0%,
+    #000 calc(100% - 24px),
+    transparent
+  );
+  mask-image: linear-gradient(
+    90deg,
+    #000 0%,
+    #000 calc(100% - 24px),
+    transparent
+  );
+}
+.chrome-tabs .chrome-tab[is-small] .chrome-tab-title {
+  margin-left: 0;
+}
+.chrome-tabs .chrome-tab .chrome-tab-favicon + .chrome-tab-title,
+.chrome-tabs .chrome-tab[is-small] .chrome-tab-favicon + .chrome-tab-title {
+  margin-left: 8px;
+}
+.chrome-tabs .chrome-tab[is-smaller] .chrome-tab-favicon + .chrome-tab-title,
+.chrome-tabs .chrome-tab[is-mini] .chrome-tab-title {
+  display: none;
+}
+.chrome-tabs .chrome-tab[active] .chrome-tab-title {
+  color: #45474a;
+}
+.chrome-tabs .chrome-tab .chrome-tab-drag-handle {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+.chrome-tabs .chrome-tab .chrome-tab-close {
+  flex-grow: 0;
+  flex-shrink: 0;
+  position: relative;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'><path stroke='rgba(0, 0, 0, .65)' stroke-linecap='square' stroke-width='1.5' d='M0 0 L8 8 M8 0 L0 8'></path></svg>");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 8px 8px;
+}
+@media (hover: hover) {
+  .chrome-tabs .chrome-tab .chrome-tab-close:hover {
+    background-color: #e8eaed;
+  }
+  .chrome-tabs .chrome-tab .chrome-tab-close:hover:active {
+    background-color: #dadce0;
+  }
+}
+@media not all and (hover: hover) {
+  .chrome-tabs .chrome-tab .chrome-tab-close:active {
+    background-color: #dadce0;
+  }
+}
+@media (hover: hover) {
+  .chrome-tabs
+    .chrome-tab:not([active])
+    .chrome-tab-close:not(:hover):not(:active) {
+    opacity: 0.8;
+  }
+}
+.chrome-tabs .chrome-tab[is-smaller] .chrome-tab-close {
+  margin-left: auto;
+}
+.chrome-tabs .chrome-tab[is-mini]:not([active]) .chrome-tab-close {
+  display: none;
+}
+.chrome-tabs .chrome-tab[is-mini][active] .chrome-tab-close {
+  margin-left: auto;
+  margin-right: auto;
+}
+@-moz-keyframes chrome-tab-was-just-added {
+  to {
+    top: 0;
+  }
+}
+@-webkit-keyframes chrome-tab-was-just-added {
+  to {
+    top: 0;
+  }
+}
+@-o-keyframes chrome-tab-was-just-added {
+  to {
+    top: 0;
+  }
+}
+@keyframes chrome-tab-was-just-added {
+  to {
+    top: 0;
+  }
+}
+.chrome-tabs.chrome-tabs-is-sorting .chrome-tab:not(.chrome-tab-is-dragging),
+.chrome-tabs:not(.chrome-tabs-is-sorting)
+  .chrome-tab.chrome-tab-was-just-dragged {
+  transition: transform 120ms ease-in-out;
+}
+.chrome-tabs .chrome-tabs-bottom-bar {
+  position: absolute;
+  bottom: 0;
+  height: 4px;
+  left: 0;
+  width: 100%;
+  background: #fff;
+  z-index: 10;
+}
+.chrome-tabs-optional-shadow-below-bottom-bar {
+  position: relative;
+  height: 1px;
+  width: 100%;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='1' height='1' viewBox='0 0 1 1'><rect x='0' y='0' width='1' height='1' fill='rgba(0, 0, 0, .17)'></rect></svg>");
+  background-size: 1px 1px;
+  background-repeat: repeat-x;
+  background-position: 0% 0%;
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 2),
+  only screen and (min--moz-device-pixel-ratio: 2),
+  only screen and (-o-min-device-pixel-ratio: 2/1),
+  only screen and (min-device-pixel-ratio: 2),
+  only screen and (min-resolution: 192dpi),
+  only screen and (min-resolution: 2dppx) {
+  .chrome-tabs-optional-shadow-below-bottom-bar {
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='2' height='2' viewBox='0 0 2 2'><rect x='0' y='0' width='2' height='1' fill='rgba(0, 0, 0, .27)'></rect></svg>");
+  }
+}
+
+.urlContainer {
+  width: 100%;
+  background-color: #222;
+  color: #fff;
+  height: 50px;
+  top: 0;
+}
+
+.frameThing {
+  background-color: #222;
+  border: hidden;
+  border-style: hidden;
+}
+
+.browserFrame {
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: calc(100% - 50px);
+  width: 100%;
+}
+
+#createTab {
+  color: #fff;
+  outline: none;
+  height: 30px;
+  margin-top: 8px;
+  float: right;
+  font-size: 20px;
+  transition: 0.3s;
+}
+
+#createTab:hover {
+  color: #e04c4c;
+}
+.chrome-tabs.chrome-tabs-dark-theme {
+  background: #202124;
+}
+.chrome-tabs.chrome-tabs-dark-theme .chrome-tab .chrome-tab-dividers::before,
+.chrome-tabs.chrome-tabs-dark-theme .chrome-tab .chrome-tab-dividers::after {
+  background: #4a4d51;
+}
+.chrome-tabs.chrome-tabs-dark-theme
+  .chrome-tab
+  .chrome-tab-background
+  > svg
+  .chrome-tab-geometry {
+  fill: #292b2e;
+}
+.chrome-tabs.chrome-tabs-dark-theme
+  .chrome-tab[active]
+  .chrome-tab-background
+  > svg
+  .chrome-tab-geometry {
+  fill: #323639;
+}
+.chrome-tabs.chrome-tabs-dark-theme .chrome-tab .chrome-tab-title {
+  color: #9ca1a7;
+}
+.chrome-tabs.chrome-tabs-dark-theme .chrome-tab[active] .chrome-tab-title {
+  color: #f1f3f4;
+}
+.chrome-tabs.chrome-tabs-dark-theme .chrome-tab .chrome-tab-close {
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'><path stroke='rgba(154, 160, 166, .8)' stroke-linecap='square' stroke-width='1.5' d='M0 0 L8 8 M8 0 L0 8'></path></svg>");
+}
+.chrome-tabs.chrome-tabs-dark-theme .chrome-tab .chrome-tab-close:hover {
+  background-color: #5f6368;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'><path stroke='rgba(255, 255, 255, .7)' stroke-linecap='square' stroke-width='1.5' d='M0 0 L8 8 M8 0 L0 8'></path></svg>");
+}
+.chrome-tabs.chrome-tabs-dark-theme .chrome-tab .chrome-tab-close:hover:active {
+  background-color: #80868b;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'><path stroke='rgba(255, 255, 255, .9)' stroke-linecap='square' stroke-width='1.5' d='M0 0 L8 8 M8 0 L0 8'></path></svg>");
+}
+.chrome-tabs.chrome-tabs-dark-theme .chrome-tabs-bottom-bar {
+  background: #323639;
+}
+    </style>
+  <meta name="googlebot" content="index, follow, snippet" />
+  <meta name="theme-color" content="#B48EAD">
+  <link href='css/main.css' rel='stylesheet'>
+  <link href='css/chrome-tabs.css' rel='stylesheet'>
+  <link href='css/chrome-tabs-dark-theme.css' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/icon?family=Material+Icons' rel='stylesheet'>
+  <link rel="manifest" href="manifest.json" />
+  <script src="/uv/uv.bundle.js"></script>
+  <script src="/uv/uv.config.js"></script>
+  <script src="/bare-client.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+		navigator.serviceWorker.register('/uv/sw.js', {
+			scope: __uv$config.prefix,
+			updateViaCache: 'none',
+		});
+    };
+
+    // check custom functions
+    document.addEventListener('keydown', key => {
+      if (key.ctrlKey) {
+        if (document.getElementsByClassName("chrome-tab")[key.key - 1]) {
+          document.getElementsByClassName("chrome-tab")[key.key - 1].click()
+          chromeTabs.setCurrentTab(document.getElementsByClassName("chrome-tab")[key.key - 1])
+          setInfo(document.getElementsByClassName("chrome-tab")[key.key - 1].ifd + 1)
+        }
+      }
+    })
+    document.addEventListener('mousedown', pass => {
+      if (pass.target.parentElement.id != "optionsdrop") hideId("optionsdrop")
+      if (pass.target.parentElement.id != "ctx") hideId("ctx")
+
+      // there HAS to be a better way to do this.
+      if (!pass.target.classList.contains("extenico")) {
+        if (document.querySelector(".extension_menu")) if (!pass.target.parentElement.classList.contains("extension_menu") && !pass.target.parentElement.parentElement.classList.contains("extension_menu") && !pass.target.classList.contains("extension_menu")) document.querySelector(".extension_menu").style.display = "none"
+      }
+    })
+
+  </script>
+  <meta name="theme-color" content="#252729" /> 
+</head>
+
+<body id="alpha">
+  <div class='surface'>
+    <div class='mock-browser'>
+      <div id="ctx" class="dropdown-content" style="top:0px;left:0px;right:auto;z-index:99">
+        <a class="pointer" id="pin" onclick="toggleId('ctx');chromeTabs.pinTab(ctxTab)">Pin tab</a> 
+        <a class="pointer" style="margin-left: 0px;"onclick="toggleId('ctx');crash()">New tab</a>
+        <a class="pointer"
+          onclick="toggleId('ctx');newTab(document.getElementById(parseInt(ctxTab) + 1).contentWindow.location.href,false);">Duplicate</a>
+          <a class="pointer"
+          onclick="toggleId('ctx');AddBookmark(parseInt(ctxTab) + 1);">Bookmark</a>
+        <a class="pointer"
+          onclick="toggleId('ctx');chromeTabs.removeTab(document.querySelectorAll('[ifd=\'' + ctxTab + '\']')[0]);document.getElementById(parseInt(ctxTab) + 1).remove()">Close</a>
+        <a class="pointer"
+          onclick="toggleId('ctx');document.getElementById(parseInt(ctxTab)+1).contentWindow.location.reload()">Reload</a>
+      </div>
+      <div class='chrome-tabs chrome-tabs-dark-theme' id="tabsmain" style='--tab-content-margin: 9px'>
+        <div class='chrome-tabs-content' id='0'>
+        </div>
+        <div class='chrome-tabs-bottom-bar'></div>
+        <style>
+          .chrome-tabs .chrome-tab {
+            width: 258px;
+          }
+
+          .chrome-tabs .chrome-tab:nth-child(1) {
+            transform: translate3d(0px, 0, 0);
+          }
+
+          .chrome-tabs .chrome-tab:nth-child(2) {
+            transform: translate3d(239px, 0, 0);
+          }
+        </style>
+      </div>
+      <button style='margin-left:0px;' class='material-icons chrome-tab' data-add-tab id='createTab'
+        onclick='crash()'>add</button>
+      <div class='mock-browser-content'>
+        <button id='urlbutton'
+          onclick='document.getElementById(getActiveFrameId()).src = getBack(getActiveFrameId())'><svg
+            xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#757575"
+            preserveAspectRatio="xMidYMid meet">
+            <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"></path>
+          </svg></button>
+        <button id='urlbutton'
+          onclick='document.getElementById(getActiveFrameId()).src = getForward(getActiveFrameId())'><svg
+            xmlns="http://www.w3.org/2000/svg" style="transform: rotate(180deg)" width="24" height="24"
+            viewBox="0 0 24 24" fill="#757575" preserveAspectRatio="xMidYMid meet">
+            <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"></path>
+          </svg></button>
+        <button id='urlbutton'
+          onclick='document.getElementById(getActiveFrameId()).contentWindow.location.reload();'><svg
+            xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#5F6368">
+            <path
+              d="M17.65 6.35A7.958 7.958 0 0 0 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08A5.99 5.99 0 0 1 12 18c-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z" />
+          </svg></button>
+        <input id='urlbar' list="searchsuggestions"/>
+        <datalist id="searchsuggestions"></datalist>
+        <div id="extensionlist"></div>
+        <button id='urlbutton' onclick='document.getElementById(getActiveFrameId()).requestFullscreen();'>
+          <svg version="1.1" width="24" height="24" viewBox="0.0 0.0 24.0 24.0" fill="none" stroke="none"
+            stroke-linecap="square" stroke-miterlimit="10" xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns="http://www.w3.org/2000/svg">
+            <clipPath id="p.0">
+              <path d="m0 0l24.0 0l0 24.0l-24.0 0l0 -24.0z" clip-rule="nonzero" />
+            </clipPath>
+            <g clip-path="url(#p.0)">
+              <path fill="#000000" fill-opacity="0.0" d="m0 0l24.0 0l0 24.0l-24.0 0z" fill-rule="evenodd" />
+              <path fill="#5f6368" d="m6.5537887 4.0406823l0 6.6456695l-2.5196853 0l0 -6.6456695z"
+                fill-rule="evenodd" />
+              <path fill="#5f6368" d="m4.047244 4.0406823l6.645669 0l0 2.5196853l-6.645669 0z" fill-rule="evenodd" />
+              <path fill="#5f6368" d="m4.047244 17.43965l6.645669 0l0 2.5196857l-6.645669 0z" fill-rule="evenodd" />
+              <path fill="#5f6368" d="m4.047244 19.946194l0 -6.645669l2.5196853 0l0 6.645669z" fill-rule="evenodd" />
+              <path fill="#5f6368" d="m17.44621 4.0406823l0 6.6456695l2.5196857 0l0 -6.6456695z" fill-rule="evenodd" />
+              <path fill="#5f6368" d="m19.952755 4.0406823l-6.645668 0l0 2.5196853l6.645668 0z" fill-rule="evenodd" />
+              <path fill="#5f6368" d="m19.952755 17.43965l-6.645668 0l0 2.5196857l6.645668 0z" fill-rule="evenodd" />
+              <path fill="#5f6368" d="m19.952755 19.946194l0 -6.645669l-2.5196838 0l0 6.645669z" fill-rule="evenodd" />
+            </g>
+          </svg> <button id='options'
+            onclick='openMenu("optionsdrop", "themedrop", "extensiondrop", "uadrop", "customtheme");'>&#x22ee;</button>
+      </div>
+      <!-- todo, javascript based dropdown menu  -->
+      <div id='optionsdrop' class='dropdown-content'>
+         <a class="pointer" onclick='toggleId("optionsdrop");'>back</a>
+        <a class="pointer"
+          onclick='toggleId("optionsdrop");document.querySelector("body").requestFullscreen()'>Fullscreen window</a>
+        <a class="pointer"
+          onclick='toggleId("optionsdrop");skipAd()'>Skip YT AD</a>
+        <!-- <a class="pointer" onclick='toggleId("optionsdrop", "uadrop");'>Set user agent</a> Disabled until I finish adding support-->
+        <a class="pointer" onclick='toggleId("optionsdrop", "searchDrop")'>Set search engine</a>
+        <a class="pointer" onclick='inspect(); toggleId("optionsdrop");'>Open devtools</a>
+        <!-- <a class="pointer" onclick='toggleId("themedrop", "optionsdrop");'>Themes</a> Disabled until themes have been reworked -->
+        <!-- <a class="pointer" onclick='toggleId("extensiondrop", "optionsdrop");'>Extensions</a> not yet :(-->
+      </div>
+      <div id="uadrop" class=dropdown-content>
+        <a class="pointer tooldivd" onclick='toggleId("uadrop", "optionsdrop");'>back</a>
+        <div class="dividersua"></div>
+        <a>Set The Useragent (currently not working)</a>
+        <a class="pointer inp"><input class="aa" id="ua" type='text' onclick="crash()"/></a>
+        <a class="pointer" onclick='document.cookie=`cua=${localStorage.getItem("ua")}`; toggleId("uadrop");'>Apply</a>
+      </div>
+      <div id="searchDrop" class="dropdown-content">
+        <a class="pointer tooldivd" onclick='toggleId("searchDrop", "optionsdrop");'>back</a>
+        <div class="dividerext"></div>
+        <a class="pointer th">Type the url plus search scheme of your engine.<input class="aa" id='customSearch'
+            type='text' onclick="crash()" placeholder="https://google.com/search?q=" /></a>
+        <a class="pointer bt"
+          onclick='localStorage.setItem("searchEngine",document.getElementById("customSearch").value);toggleId("searchDrop");searchEngine=document.getElementById("customSearch").value'>Apply</a>
+        <a></a>
+      </div>
+      <div id="themedrop" class='dropdown-content'>
+        <a class="pointer tooldivd" onclick='toggleId("themedrop", "optionsdrop");'>back</a>
+        <div class="divider"></div>
+        <a class="pointer" onclick='applyTheme("Dark"); toggleId("themedrop");'>Dark Theme</a>
+        <a class="pointer" onclick='applyTheme("Light"); toggleId("themedrop");'>Light Theme</a>
+        <a class="pointer" onclick='toggleId("customtheme", "themedrop")'>Custom Theme</a>
+      </div>
+      <div id="customtheme" class='dropdown-content'>
+        <a class="pointer tooldivd" onclick='toggleId("customtheme", "themedrop")'>back</a>
+        <div class="dividerct"></div>
+        <a>These are color values in hex.<br>To apply theme click apply.<br>NOTE: This will refresh the page.</a>
+        <a class="pointer th">Background <input class="aa" id='tabbkg' type='text' onclick="crash()"/></a>
+        <a class="pointer th">Tab Hover <input class="aa" id='tabhover' type='text' onclick="crash()"/></a>
+        <a class="pointer th">Active Tab <input class="aa" id='tabact' type='text' onclick="crash()"/></a>
+        <a class="pointer th">Active Tab Title <input class="aa" id='tabacttit' onclick="crash()" type='text' /></a>
+        <a class="pointer th">Inactive Tab Title <input class="aa" id='tabinatit' type='text' onclick="crash()"/></a>
+        <a class="pointer th">Searchbar<input class="aa" id='searchbar' type='text' /></a>
+        <a class="pointer bt" onclick='applyTheme("Apply"); toggleId("customtheme");'>Apply</a>
+        <a class="pointer bt" onclick='applyTheme("Reset"); toggleId("customtheme");'>Reset</a>
+      </div>
+      <div id="extensiondrop" class='dropdown-content'>
+        <a class="pointer tooldivd" onclick='toggleId("extensiondrop", "optionsdrop")'>back</a>
+        <div class="dividerext"></div>
+        <a class="pointer" onclick="newTab('ht://extensions')">Manage extensions</a>
+        <a class="pointer" onclick="newTab('ht://extensionsmarketplace')">Get extensions</a>
+      </div>
+    </div>
+    <script src='js/xor.js'></script>
+    <script src='js/draggabilly.pkgd.min.js'></script>
+    <script src='js/chrome-tabs.js'></script>
+    <script src='internal/manager.js'></script>
+    <script src='js/js.js'></script>
+    <!-- <script src='js/extensions.js'></script> -->
+    <!-- <script src='js/x/sponsorblock.js'></script>  -->
+    <!-- <script src='js/x/DarkMode.js'></script> -->
+
+    <script>document.cookie = "oldsmobile=badcar"</script>
+  </div>
+        <!--
+  _____                   _                _     _                                                                      
+ |  __ \                 | |              | |   | |                                                                     
+ | |__) |   ___    _ __  | |_    ___    __| |   | |__    _   _                                                          
+ |  ___/   / _ \  | '__| | __|  / _ \  / _` |   | '_ \  | | | |                                                         
+ | |      | (_) | | |    | |_  |  __/ | (_| |   | |_) | | |_| |                                                         
+ |_|       \___/  |_|     \__|  \___|  \__,_|   |_.__/   \__, |                                                         
+                                                          __/ |                                                         
+                                                         |___/                                                          
+                                _     _                     _       _   _          _                               _    
+     /\                        | |   | |                   | |     | \ | |        | |                             | |   
+    /  \     _ __ ___     ___  | |_  | |__    _   _   ___  | |_    |  \| |   ___  | |_  __      __   ___    _ __  | | __
+   / /\ \   | '_ ` _ \   / _ \ | __| | '_ \  | | | | / __| | __|   | . ` |  / _ \ | __| \ \ /\ / /  / _ \  | '__| | |/ /
+  / ____ \  | | | | | | |  __/ | |_  | | | | | |_| | \__ \ | |_    | |\  | |  __/ | |_   \ V  V /  | (_) | | |    |   < 
+ /_/    \_\ |_| |_| |_|  \___|  \__| |_| |_|  \__, | |___/  \__|   |_| \_|  \___|  \__|   \_/\_/    \___/  |_|    |_|\_\
+                                               __/ |                                                                    
+                                              |___/                                                                                                                  
+        -->
+</body>
+
+</html>
