@@ -1,0 +1,878 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <title>Nebula</title>
+    <script src="crash.js"></script>
+    <link rel="icon" type="image/x-icon" href="logo.png"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- MetaData -->
+    <meta name="title" content="NebulaWEB" />
+    <meta
+      name="description"
+      content="NebulaWeb by Nebula Services. NebulaWeb is a stunning, sleek, and functional web-proxy/unblocker with support for thousands of popular sites. "
+    />
+    <meta
+      name="keywords"
+      content="unblocked, dispenser, proxies, nebulaservices, nebula services, discord, web dev,  unblocker, web unblocker, tutorial, proxy, free"
+    />
+    <meta name="robots" content="index, nofollow" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="language" content="English" />
+    <meta name="revisit-after" content="10 days" />
+    <meta name="author" content="Nebula Services" />
+
+    <!-- Scripts -->
+    <script src="resources/preload.js"></script>
+    <script src="resources/theme.js"></script>
+    <script src="resources/nebulamain.js"></script>
+    <script src="resources/nebulaclock.js"></script>
+    <script src="resources/stealthEngine.js"></script>
+    <!-- Stylesheet -->
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Dongle&family=Roboto:wght@100&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,100&display=swap");
+
+:root {
+  --background-primary: #191724;
+  --navbar-color: #26233a;
+  --navbar-height: 60px;
+  --navbar-text-color: #7967dd;
+  --navbar-link-color: #e0def4;
+  --navbar-font: "Roboto";
+  --input-text-color: #e0def4;
+  --input-placeholder-color: white;
+  --input-background-color: #1f1d2e;
+  --input-border-color: #eb6f92;
+  --input-border-size: 1.3px;
+  --navbar-logo-filter: none;
+}
+
+::-webkit-input-placeholder {
+  text-align: center;
+  font-family: "Roboto";
+}
+
+:-moz-placeholder {
+  text-align: center;
+}
+
+#navbar {
+  height: var(--navbar-height);
+  text-align: center;
+  align-items: center;
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: var(--navbar-color);
+}
+
+.sidenav-btn {
+  display: none;
+}
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #232133;
+  padding-top: 60px;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  overflow: hidden;
+}
+
+.sidenav a {
+  padding: 8px 16px 16px 32px;
+  text-decoration: none;
+  width: 100vw;
+  font-size: 24px;
+  color: #cfcfcf;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+  z-index: 2;
+  left: 140px;
+}
+
+@media only screen and (max-width: 690px) {
+  /* funny number */
+
+  #navbar > ul > li {
+    display: none;
+  }
+
+  .sidenav-btn {
+    display: flex;
+
+    align-items: center;
+    position: absolute;
+    left: 90vw;
+    width: var(--navbar-height);
+    height: var(--navbar-height);
+  }
+
+  .sidenav-btn > svg {
+    width: 50px;
+    height: 50px;
+  }
+
+  #digitalCLOContainerLI {
+    display: none;
+  }
+
+  #navbar > ul > li > a > svg {
+    min-width: 24px;
+  }
+}
+
+a {
+  color: var(--navbar-link-color);
+  text-decoration: none !important;
+  font-family: "Roboto";
+}
+
+a:hover {
+  color: grey;
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+.down {
+  background-color: rgb(90, 24, 154);
+  left: inherit !important;
+  font-family: "Helvetica";
+  background-color: var(--navbar-color);
+  /* box-shadow: 2px 2px rgb(0 0 0 / 20%); */
+  color: white;
+  display: none;
+  visibility: hidden;
+  opacity: 0;
+  list-style-type: none;
+  position: fixed;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  list-style-type: none;
+}
+
+#navbar ul:not(.down) {
+  font-family: "Helvetica";
+  /* box-shadow: 2px 2px rgb(0 0 0 / 20%); */
+  color: white;
+  margin-left: auto;
+  list-style-type: none;
+  float: right !important;
+  margin-right: 2.3%;
+  display: flex;
+  align-items: center;
+}
+
+#navbar ul li {
+  float: left;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  padding-right: 1em;
+  padding-left: 1em;
+  padding: 1rem;
+}
+
+::placeholder,
+input[type="text"] {
+  color: var(--input-placeholder-color);
+  font-size: 20px;
+  text-align: center;
+  font-family: "Roboto";
+}
+
+#navbar ul p,
+ul a {
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+}
+
+*/
+/*
+  #navbar ul li p, ul li a {
+	  font-weight: normal;
+  }
+  */
+
+#navbar ul li ul {
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  visibility: hidden;
+  opacity: 0;
+  margin-top: 1rem;
+  left: 0;
+  display: none;
+}
+
+#navbar ul li:hover ul,
+ul li ul:hover {
+  visibility: visible;
+  opacity: 1;
+  display: block;
+}
+
+#navbar ul li p {
+  color: white;
+  font-family: "Calibri";
+  z-index: 3 !important;
+}
+
+#navbar ul li ul li {
+  clear: both;
+  width: 100%;
+}
+
+#content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 98%;
+  color: white;
+  flex-direction: column;
+  font-family: "Roboto";
+}
+
+#content h1 {
+  padding-bottom: 0.5em;
+  font-weight: 100;
+  text-align: center;
+}
+
+#content img {
+  padding-left: 0.5em;
+  filter: brightness(0) invert(1);
+}
+
+#content input {
+  font-size: 20px;
+  text-align: center;
+  font-family: "Calibri";
+  border-style: solid !important;
+  border: var(--input-border-size) solid var(--input-border-color);
+  border-width: 1px;
+  border-radius: 15px;
+  background-color: var(--input-background-color);
+  color: var(--input-text-color);
+  width: 300px;
+  height: 50px;
+  box-shadow: none !important;
+  outline: none;
+  text-align: center;
+  font-family: "Roboto";
+}
+
+#content input:focus {
+  outline: none;
+  box-shadow: none !important;
+}
+
+@keyframes inputwide {
+  0% {
+    width: 0px;
+    transition-duration: 0.5s;
+  }
+
+  100% {
+    width: 300px;
+    transition-duration: 0.5s;
+  }
+}
+
+.loader {
+  width: 283px;
+  text-align: center;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  transition: 0.1s;
+}
+
+svg path,
+svg rect {
+  fill: #eb6f92;
+}
+
+.connector {
+  color: white;
+  margin-left: 10px;
+  font-size: 15px;
+}
+
+@keyframes popout {
+  0% {
+    height: -20px;
+  }
+
+  100% {
+    height: 0px;
+  }
+}
+
+.nebHeader {
+  font-family: var(--navbar-font);
+  color: var(--navbar-text-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  margin-left: 0.5%;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+body {
+  background-color: var(--background-primary);
+  color: var(--text-color-primary);
+  animation: fadeInAnimation ease 1s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fadeInAnimation {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+input:focus::placeholder {
+  color: transparent;
+}
+
+#navbar #thumbImg {
+  transition: width 2s, height 2s, transform 2s;
+  filter: var(--navbar-logo-filter);
+}
+
+#navbar #thumbImg:hover {
+  transform: rotate(360deg);
+}
+
+.stamp {
+  text-align: right;
+  position: fixed;
+  bottom: 0;
+  font-family: "Montserrat", sans-serif;
+  font-style: italic;
+  font-weight: lighter;
+  color: whitesmoke;
+  opacity: 90%;
+  user-select: none;
+  font-size: 13px;
+  padding-left: 5px;
+  padding-bottom: 1px;
+  cursor: default;
+}
+
+.stamp:hover {
+  text-align: right;
+  position: fixed;
+  bottom: 0;
+  font-family: "Montserrat", sans-serif;
+  font-style: italic;
+  font-weight: lighter;
+  color: whitesmoke;
+  opacity: 38%;
+  user-select: none;
+  font-size: 13px;
+  padding-left: 5px;
+  padding-bottom: 1px;
+  cursor: default;
+}
+
+.github {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  padding-right: 10px;
+}
+
+.tos {
+  position: fixed;
+  right: 67px;
+  bottom: 0;
+  padding-right: 15px;
+}
+
+.privacy {
+  position: fixed;
+  right: 114px;
+  bottom: 0;
+  padding-right: 15px;
+}
+
+.modal-window {
+  position: fixed;
+  background-color: rgba(255, 255, 255, 0.25);
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 999;
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s;
+  font-family: "Montserrat", sans-serif;
+}
+
+.modal-window:target {
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal-window > div {
+  width: 400px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 2em;
+  background: white;
+}
+
+.modal-window header {
+  font-weight: bold;
+}
+
+.modal-window h1 {
+  font-size: 150%;
+  margin: 0 0 15px;
+}
+
+.modal-close {
+  color: #aaa;
+  line-height: 50px;
+  font-size: 80%;
+  position: absolute;
+  right: 0;
+  text-align: center;
+  top: 0;
+  width: 70px;
+  text-decoration: none;
+}
+
+.modal-close:hover {
+  color: black;
+}
+
+.modal-window > div {
+  border-radius: 1rem;
+}
+
+.modal-window div:not(:last-of-type) {
+  margin-bottom: 15px;
+}
+
+.logo {
+  max-width: 150px;
+  display: block;
+}
+
+small {
+  color: lightgray;
+}
+
+.btn {
+  background-color: white;
+  padding: 1em 1.5em;
+  border-radius: 0.5rem;
+  text-decoration: none;
+}
+
+.btn i {
+  padding-right: 0.3em;
+}
+
+@media only screen and (max-width: 1190px) {
+  #digitalClock {
+    display: none;
+  }
+}
+
+.clockColon {
+  opacity: 100%;
+
+  animation: blink 0.5s step-end infinite alternate;
+  transition: 0.2s;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0%;
+  }
+}
+    </style>
+    <link rel="stylesheet" href="style/main.css" />
+    <!-- Embed -->
+    <meta name="theme-color" content="#eb6f92" />
+    <meta property="og:title" content="Nebula" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="/images/logo.png"/>
+    <meta property="og:description" content="Nebula Web" />
+  </head>
+  <body>
+    <!-- Scripts -->
+    <script src="uv/uv.bundle.js"></script>
+    <script src="uv/uv.config.js"></script>
+    <script src="osana/osana.bundle.js"></script>
+    <script src="osana/osana.config.js"></script>
+    <div id="leaving-nebula-to-external" class="modal-window">
+      <div>
+        <a href="#" title="Close" class="modal-close">Close</a>
+        <h1 style="color: black">Heads up!</h1>
+        <div style="color: black">You're leaving Nebula to SITE</div>
+        <br />
+        <div style="color: black">Go! &nbsp; Stay here</div>
+        <div style="color: black"></div>
+      </div>
+    </div>
+    <div id="reset-all" class="modal-window">
+      <div>
+        <a href="#" title="Close" class="modal-close">Close</a>
+        <h1 style="color: black">Heads up!</h1>
+        <div style="color: black">
+          You're about to reset all of your settings...
+        </div>
+        <br />
+        <div style="color: black">Do it! &nbsp; Wait, No!</div>
+        <div style="color: black"></div>
+      </div>
+    </div>
+    <div id="nebula-out-of-date" class="modal-window">
+      <div>
+        <a href="#" title="Close" class="modal-close">Close</a>
+        <h1 style="color: black">Hold up!</h1>
+        <div style="color: black">
+          This deployment of Nebula Web is out of date with the current
+          release... <br />
+        </div>
+        <br />
+      </div>
+    </div>
+    <div id="navbar">
+      <img
+        alt="Nebula Logo"
+        src="logo.png"
+        id="thumbImg"
+        style="height: 62px; width: 62px; margin-left: 5%; border-radius: 5px"
+      />
+      <h1 class="nebHeader">nebula.</h1>
+      <ul>
+        <li id="digitalCLOContainerLI">
+          <h2
+            id="digitalCLOContainer"
+            style="
+              user-select: none;
+              cursor: default;
+              font-family: 'Montserrat', sans-serif;
+              color: white;
+              font-weight: 100;
+              position: absolute;
+              left: 50%;
+              transform: translateX(-50%);
+              top: -4px;
+            "
+          >
+            <span
+              id="digitalClock"
+              style="
+                user-select: none;
+                cursor: default;
+                opacity: 50%;
+                font-family: 'Montserrat', sans-serif;
+                color: white;
+              "
+            ></span>
+          </h2>
+        </li>
+        <li>
+          <a
+            id="gamesRadon"
+            class="a-navbutton"
+            onclick='crash()'
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="w-6 h-6"
+              style="width: 23px"
+            >
+              <path
+                style="fill: #ffffff00"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M21 7.5l-9-5.25L3 7.5m18 0l-9 5.25m9-5.25v9l-9 5.25M3 7.5l9 5.25M3 7.5v9l9 5.25m0-9v9"
+              />
+            </svg>
+            &nbsp;Games
+          </a>
+        </li>
+        <li>
+          <a class="a-navbutton" onclick="crash()">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="w-6 h-6"
+              style="width: 23px"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M6 13.5V3.75m0 9.75a1.5 1.5 0 010 3m0-3a1.5 1.5 0 000 3m0 3.75V16.5m12-3V3.75m0 9.75a1.5 1.5 0 010 3m0-3a1.5 1.5 0 000 3m0 3.75V16.5m-6-9V3.75m0 3.75a1.5 1.5 0 010 3m0-3a1.5 1.5 0 000 3m0 9.75V10.5"
+              />
+            </svg>
+            &nbsp;Settings &nbsp;<b style="color: red">NEW</b>
+          </a>
+        </li>
+        <li>
+          <a class="a-navbutton" onclick="crash()">
+            <svg
+              style="width: 23px"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="w-6 h-6"
+            >
+              <path
+                style="fill: #ffffff00"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M13.19 8.688a4.5 4.5 0 011.242 7.244l-4.5 4.5a4.5 4.5 0 01-6.364-6.364l1.757-1.757m13.35-.622l1.757-1.757a4.5 4.5 0 00-6.364-6.364l-4.5 4.5a4.5 4.5 0 001.242 7.244"
+              />
+            </svg>
+            &nbsp;Want More Links?
+          </a>
+        </li>
+      </ul>
+    </div>
+    <span class="sidenav-btn" id="sidenav-btn" onclick="crash()">
+      <svg
+        class="menu-bar"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 448 512"
+      >
+        <!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+        <path
+          d="M0 96C0 78.33 14.33 64 32 64H416C433.7 64 448 78.33 448 96C448 113.7 433.7 128 416 128H32C14.33 128 0 113.7 0 96zM0 256C0 238.3 14.33 224 32 224H416C433.7 224 448 238.3 448 256C448 273.7 433.7 288 416 288H32C14.33 288 0 273.7 0 256zM416 448H32C14.33 448 0 433.7 0 416C0 398.3 14.33 384 32 384H416C433.7 384 448 398.3 448 416C448 433.7 433.7 448 416 448z"
+        ></path>
+      </svg>
+    </span>
+    <div id="sidenav" class="sidenav">
+      <a href="javascript:void(0)" class="closebtn" onclick="crash()"
+        >&times;</a
+      >
+      <a href="" class="a-navbutton">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="w-6 h-6"
+          style="width: 23px"
+        >
+          <path
+            style="fill: #ffffff00"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M21 7.5l-9-5.25L3 7.5m18 0l-9 5.25m9-5.25v9l-9 5.25M3 7.5l9 5.25M3 7.5v9l9 5.25m0-9v9"
+          />
+        </svg>
+        &nbsp;Games
+      </a>
+      <a class="a-navbutton" href="options">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="w-6 h-6"
+          style="width: 23px"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M6 13.5V3.75m0 9.75a1.5 1.5 0 010 3m0-3a1.5 1.5 0 000 3m0 3.75V16.5m12-3V3.75m0 9.75a1.5 1.5 0 010 3m0-3a1.5 1.5 0 000 3m0 3.75V16.5m-6-9V3.75m0 3.75a1.5 1.5 0 010 3m0-3a1.5 1.5 0 000 3m0 9.75V10.5"
+          />
+        </svg>
+        &nbsp;Settings
+      </a>
+      <a class="a-navbutton" href="https://discord.gg/unblocker">
+        <svg
+          style="width: 23px"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="w-6 h-6"
+        >
+          <path
+            style="fill: #ffffff00"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M13.19 8.688a4.5 4.5 0 011.242 7.244l-4.5 4.5a4.5 4.5 0 01-6.364-6.364l1.757-1.757m13.35-.622l1.757-1.757a4.5 4.5 0 00-6.364-6.364l-4.5 4.5a4.5 4.5 0 001.242 7.244"
+          />
+        </svg>
+        &nbsp;Want More Links?
+      </a>
+    </div>
+    <div id="content">
+      <form class="url" action="" method="POST" id="unblocker-form">
+        <input
+          class="omnibox"
+          type="text"
+          id="url"
+          name="url"
+          autocomplete="off"
+          placeholder="Explore the web freely"
+          onclick="crash()"
+        />
+      </form>
+      <div id="lpoader" class="loader loader--style8" title="7">
+        <svg
+          version="1.1"
+          id="Layer_1"
+          xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          x="0px"
+          y="0px"
+          width="24px"
+          height="30px"
+          viewBox="0 0 24 30"
+          style="enable-background: new 0 0 50 50"
+          xml:space="preserve"
+        >
+          <rect x="0" y="10" width="4" height="10" fill="#333" opacity="0.2">
+            <animate
+              attributeName="opacity"
+              attributeType="XML"
+              values="0.2; 1; .2"
+              begin="0s"
+              dur="0.6s"
+              repeatCount="indefinite"
+            />
+            <animate
+              attributeName="height"
+              attributeType="XML"
+              values="10; 20; 10"
+              begin="0s"
+              dur="0.6s"
+              repeatCount="indefinite"
+            />
+            <animate
+              attributeName="y"
+              attributeType="XML"
+              values="10; 5; 10"
+              begin="0s"
+              dur="0.6s"
+              repeatCount="indefinite"
+            />
+          </rect>
+          <rect x="8" y="10" width="4" height="10" fill="#333" opacity="0.2">
+            <animate
+              attributeName="opacity"
+              attributeType="XML"
+              values="0.2; 1; .2"
+              begin="0.15s"
+              dur="0.6s"
+              repeatCount="indefinite"
+            />
+            <animate
+              attributeName="height"
+              attributeType="XML"
+              values="10; 20; 10"
+              begin="0.15s"
+              dur="0.6s"
+              repeatCount="indefinite"
+            />
+            <animate
+              attributeName="y"
+              attributeType="XML"
+              values="10; 5; 10"
+              begin="0.15s"
+              dur="0.6s"
+              repeatCount="indefinite"
+            />
+          </rect>
+          <rect x="16" y="10" width="4" height="10" fill="#333" opacity="0.2">
+            <animate
+              attributeName="opacity"
+              attributeType="XML"
+              values="0.2; 1; .2"
+              begin="0.3s"
+              dur="0.6s"
+              repeatCount="indefinite"
+            />
+            <animate
+              attributeName="height"
+              attributeType="XML"
+              values="10; 20; 10"
+              begin="0.3s"
+              dur="0.6s"
+              repeatCount="indefinite"
+            />
+            <animate
+              attributeName="y"
+              attributeType="XML"
+              values="10; 5; 10"
+              begin="0.3s"
+              dur="0.6s"
+              repeatCount="indefinite"
+            />
+          </rect>
+        </svg>
+        <p id="connectorText" class="connector"></p>
+      </div>
+    </div>
+    <!-- Stamp -->
+    <div>
+      <a href="#" class="stamp"> Nebula &copy; Nebula Services 2022 </a>
+      <a class="github" href="https://github.com/NebulaServices/Nebula"
+        >GitHub</a
+      >
+      <a
+        class="tos"
+        href="/privacy"
+        >Privacy</a
+      >
+    </div>
+  </body>
+</html>
