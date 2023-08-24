@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terbium</title>
+    <script src="crash.js"></script>
+    <style>
+      @font-face {
+    font-family: prod;
+    src: url(resources/Product.ttf);
+}
+
+@font-face {
+    font-family: rob;
+    src: url(resources/Roboto.ttf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    height: 100%;
+    width: 100%;
+    font-family: rob;
+}
+
+.showHide {
+    margin: 6px 7px 0px 2px;
+}
+
+.eye {
+    width: 27px;
+    height: 27px;
+    cursor: pointer;
+}
+
+.eye path {
+    transition: 200ms ease;
+    fill: #5b5b5b;
+}
+
+.eye path.showing {
+    fill: #46D966;
+}
+
+.loginDetails {
+    background-color: #222222;
+    position: absolute;
+    inset: 0;
+    z-index: 9999999999;
+    display: grid;
+    justify-items: center;
+    align-content: center;
+    gap: 4px;
+    backdrop-filter: blur(9px);
+}
+
+.skip {
+    color: gray;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.inputC {
+    display: grid;
+    width: 275px;
+    border-radius: 6px;
+    box-shadow: 0 4px 7px 3px #0000004a;
+}
+
+.input {
+    display: flex;
+    align-items: center;
+    position: relative;
+    justify-content: center;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    background-color: #2d2d2d;
+    overflow: hidden;
+    gap: 4px;
+    transition: 200ms ease-in-out;
+}
+
+.inputC .bott {
+    background-color: #5b5b5b;
+    transition: 200ms ease-in-out;
+    height: 4px;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    overflow: hidden;
+    display: flex;
+}
+
+.secureAmount {
+    display: grid;
+    width: 25%;
+    height: 100%;
+}
+
+.err {
+    animation: wrong 200ms ease-in-out;
+}
+
+input.pass {
+    font-family: prod;
+    height: 45px;
+    background: #2d2d2d;
+    border: none;
+    font-size: 1.4em;
+    outline: none;
+    transition: 200ms ease-in-out;
+    text-align: center;
+    color: #45ff7c;
+    width: 100%;
+}
+
+input.pass:focus {
+    background-color: #373737;
+    color: #5b5b5b;
+}
+
+.inputC.focus .input {
+    background-color: #373737;
+}
+
+.inputC.focus .bott {
+    background-color: #1ea356;
+}
+
+.inputC.err .bott {
+    background-color: #ff9090;
+}
+
+.inputC.success .bott {
+    background-color: #84ffb7;
+}
+
+.inputC.err input.pass {
+    background-color: #ff5757;
+    color: white;
+}
+
+.inputC.success input.pass {
+    background-color: #41df83;
+    color: white;
+}
+
+.passState {
+    color: #1ea356;
+    font-family: prod;
+    font-size: 21px;
+    font-weight: bold;
+}
+
+.spinner {
+    transition: width ease-in-out 0.3s;
+    position: absolute;
+}
+
+.spinner.noSpin {
+    width: 0;
+    height: 0;
+    animation: none;
+}
+
+.spinner.spin {
+    animation: rotate 2s linear infinite;
+    z-index: 2;
+    width: 28px;
+    fill: none;
+}
+
+.spinner .path {
+    stroke: #228e3d;
+    -webkit-animation: dash 1.5s ease-in-out infinite;
+    animation: dash 1.5s ease-in-out infinite;
+}
+
+@-webkit-keyframes rotate {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes rotate {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@-webkit-keyframes dash {
+    0% {
+        stroke-dasharray: 1, 150;
+        stroke-dashoffset: 0;
+    }
+
+    50% {
+        stroke-dasharray: 90, 150;
+        stroke-dashoffset: -35;
+    }
+
+    100% {
+        stroke-dasharray: 90, 150;
+        stroke-dashoffset: -124;
+    }
+}
+
+@keyframes dash {
+    0% {
+        stroke-dasharray: 1, 150;
+        stroke-dashoffset: 0;
+    }
+
+    50% {
+        stroke-dasharray: 90, 150;
+        stroke-dashoffset: -35;
+    }
+
+    100% {
+        stroke-dasharray: 90, 150;
+        stroke-dashoffset: -124;
+    }
+}
+    </style>
+</head>
+    <body>
+        <div class="loginDetails">
+            <p class="passState">Create A Password</p>
+            <div class="inputC">
+                <div class="input">
+                    <input type="password" oninput="strengthChecker()" onfocus="let inp = document.querySelector('.inputC'); inp.classList.add('focus');" onkeydown="if(event.key='Enter'){crash()}" onblur="document.querySelector('.inputC').classList.remove('focus')" name="pass" id="pass" class="pass passN">
+                    <a class="showHide" id="showHide" onclick="toggle();">
+                        <svg class="eye" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M1.82843 37.3553C0.266336 38.9174 0.266336 41.4501 1.82843 43.0122L15.2635 56.4472C28.9318 70.1156 51.0926 70.1156 64.7609 56.4472L78.196 43.0122C79.7581 41.4501 79.7581 38.9174 78.196 37.3553L64.7609 23.9203C51.0926 10.2519 28.9318 10.2519 15.2635 23.9203L1.82843 37.3553ZM40 54C47.732 54 54 47.732 54 40C54 32.268 47.732 26 40 26C32.268 26 26 32.268 26 40C26 47.732 32.268 54 40 54Z"/>
+                        </svg>
+                    </a>
+                    <svg class="spinner noSpin" viewBox="0 0 50 50"><circle class="path" cx="25" cy="25" r="20" fill="none" stroke-width="6"></circle></svg>
+                </div>
+                <div class="bott" id="secureAmount"></div>
+            </div>
+            <div class="strengthMessage" id="strengthMessage">Strength</div>
+            <a class="skip" onclick="crash()">CONTINUE WITHOUT A PASSWORD</a>
+        </div>
+        <script>let params = {
+    count: false,
+    letters: false,
+    numbers: false,
+    special: false,
+}
+
+let secureAmount = document.getElementById('secureAmount');
+function strengthChecker() {
+    let password = document.getElementById('pass').value;
+    let strengthMessage = document.getElementById('strengthMessage');
+    params.letters = (/[a-z]+/.test(password)) ? true : false;
+    params.numbers = (/[0-9]+/.test(password)) ? true : false;
+    params.special = (/[!\"$%&/()=?@~`\\.\';:+-^_]+/.test(password)) ? true : false;
+    params.count = (password.length > 8) ? true : false;
+    
+    let strength = Object.values(params).filter(value => value);
+    secureAmount.innerHTML = "";
+    for(let i in strength) {
+        let span = document.createElement('span');
+        span.classList.add('secureAmount');
+        secureAmount.appendChild(span);
+    }
+    let spanRef = document.querySelectorAll('.secureAmount');
+    for(let i = 0; i < spanRef.length; i++) {
+        switch(spanRef.length - 1) {
+            case 0:
+                spanRef[i].style.backgroundColor = '#ff5c5c';
+                strengthMessage.innerHTML = 'Strength: Weak';
+                break;
+            case 1:
+                spanRef[i].style.backgroundColor = '#ffb74d';
+                strengthMessage.innerHTML = 'Strength: Medium';
+                break;
+            case 2:
+                spanRef[i].style.backgroundColor = '#ffeb3b';
+                strengthMessage.innerHTML = 'Strength: Strong';
+                break;
+            case 3:
+                spanRef[i].style.backgroundColor = '#87f78b';
+                strengthMessage.innerHTML = 'Strength: Secure';
+                break;
+        }
+    }
+}
+
+function toggle() {
+    let password = document.getElementById('pass');
+    let eye = document.getElementById('showHide');
+    if(password.type === 'password'){
+        password.type = 'text';
+        eye.querySelector('.eye').querySelector("path").classList.add('showing');
+    } else {
+        password.type = 'password';
+        eye.querySelector('.eye').querySelector("path").classList.remove('showing');
+    }
+}</script>
+    </body>
+</html>
